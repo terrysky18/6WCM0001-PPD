@@ -24,6 +24,19 @@ public class Train
     /* Ticket price - how much a ticket costs. */
     private int ticketPrice;
 
+    /*
+    * Default constructor for Train
+    */
+    public Train ()
+    {
+        destination = "";
+        capacity = -1;
+        TrainNumber = -1;
+
+        numberInTrain = 0;
+        ticketPrice = 50;
+    }
+
     /** Constructor for Train
      * @param dest the destination of the Train
      * @param num the number of the Train
@@ -38,7 +51,50 @@ public class Train
         numberInTrain = 0;
         ticketPrice = 50;
     }
-   
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public int getTrainNumber() {
+        return TrainNumber;
+    }
+
+    public int getNumberInTrain() {
+        return numberInTrain;
+    }
+
+    public int getTicketPrice() {
+        return ticketPrice;
+    }
+
+    public void setTrainNumber(int trainNumber) {
+        TrainNumber = trainNumber;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return "Train{" +
+                "destination='" + destination + '\'' +
+                ", TrainNumber=" + TrainNumber +
+                ", capacity=" + capacity +
+                ", numberInTrain=" + numberInTrain +
+                ", ticketPrice=" + ticketPrice +
+                '}';
+    }
+
     //mutators
     /* Records customer taking Train */
     public void enterTrain ()
