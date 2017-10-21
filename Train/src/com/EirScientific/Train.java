@@ -8,22 +8,16 @@ package com.EirScientific;
  */
 public class Train
 {
-    //Fields
     /* Destination of the Train */
     private String destination;
-
     /* Train number - identifies the Train */  
     private int trainNumber;
-    
     /* Capacity of the Train - how many customers can be in it */  
     private int capacity;
-    
     /* Number of customers currently in the Train */      
     private int numberInTrain;
-    
     /* Ticket price - how much a ticket costs. */
     private int ticketPrice;
-
     /* Total takings - total money taken in by the train */
     private int totalTaking;
 
