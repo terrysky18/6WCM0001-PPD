@@ -16,7 +16,7 @@ public class Main {
         int train2_capacity = 210;
         int train2_ticket = 62;
         Train train2 = new Train(train2_destination, train2_number,
-                            train2_capacity, train2_ticket);
+                            train2_capacity, train2_ticket, "Sean Potter", 1358);
 
         System.out.println(train2);
     }

@@ -20,6 +20,8 @@ public class Train
     private int ticketPrice;
     /* Total takings - total money taken in by the train */
     private int totalTaking;
+    /* Train Driver - information regarding the train driver */
+    private Driver trainDriver;
 
     /** Default constructor for Train */
     public Train ()
@@ -31,6 +33,7 @@ public class Train
         this.numberInTrain = 0;
         this.ticketPrice = 50;
         this.totalTaking = numberInTrain * ticketPrice;
+        this.trainDriver = new Driver();
     }
 
     /** Constructor for Train
@@ -47,6 +50,7 @@ public class Train
         this.numberInTrain = 0;
         this.ticketPrice = 50;
         this.totalTaking = numberInTrain * ticketPrice;
+        this.trainDriver = new Driver();
     }
 
     /** Constructor for Train
@@ -55,7 +59,7 @@ public class Train
      * @param capacity
      * @param ticketPrice
      */
-    public Train(String destination, int trainNumber, int capacity, int ticketPrice) {
+    public Train(String destination, int trainNumber, int capacity, int ticketPrice, String driverName, int driverID) {
         this.destination = destination;
         this.trainNumber = trainNumber;
         this.capacity = capacity;
@@ -63,6 +67,7 @@ public class Train
 
         this.numberInTrain = 0;
         this.totalTaking = numberInTrain * this.ticketPrice;
+        this.trainDriver = new Driver(driverName, driverID);
     }
 
     public String getDestination() {
@@ -113,14 +118,15 @@ public class Train
 
     @Override
     public String toString() {
-        return "Train{" +
-                "destination='" + destination + '\'' +
-                ", trainNumber=" + trainNumber +
-                ", capacity=" + capacity +
-                ", numberInTrain=" + numberInTrain +
-                ", ticketPrice=" + ticketPrice +
-                ", totalTaking=" + totalTaking +
-                '}';
+        String myTrain = "Train{" +
+                "destination='" + destination + '\n' +
+                ", trainNumber=" + trainNumber + '\n' +
+                ", capacity=" + capacity + '\n' +
+                ", numberInTrain=" + numberInTrain + '\n' +
+                ", ticketPrice=" + ticketPrice + '\n' +
+                ", totalTaking=" + totalTaking + '}' + '\n' +
+                trainDriver;
+        return myTrain;
     }
 
     //mutators
