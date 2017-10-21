@@ -3,17 +3,38 @@ package com.EirScientific;
 /**
  *  An object of this class is a Driver of a coach.
  * 
- * @author Mick Wood
- * @version March 2009
+ * @author Terry Song
+ * @version Octorber 2017
  */
 public class Driver
 {
     private String name;
     private int id;    //id of a driver
-   
-    public Driver (String n, int i)
+
+    public Driver() {
+        this.name = "";
+        this.id = -1;
+    }
+
+    public Driver (String name, int id)
     {
-        name = n;
-        id = i;
-    }    
+        this.name = name;
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
