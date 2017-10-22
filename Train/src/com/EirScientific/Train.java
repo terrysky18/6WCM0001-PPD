@@ -119,12 +119,12 @@ public class Train
     @Override
     public String toString() {
         String myTrain = "Train{" +
-                "destination='" + destination + '\n' +
-                ", trainNumber=" + trainNumber + '\n' +
-                ", capacity=" + capacity + '\n' +
-                ", numberInTrain=" + numberInTrain + '\n' +
-                ", ticketPrice=" + ticketPrice + '\n' +
-                ", totalTaking=" + totalTaking + '}' + '\n' +
+                "destination=" + destination +
+                ",\ntrainNumber=" + trainNumber +
+                ",\ncapacity=" + capacity +
+                ",\nnumberInTrain=" + numberInTrain +
+                ",\nticketPrice=" + ticketPrice +
+                ",\ntotalTaking=" + totalTaking + "}\n" +
                 trainDriver;
         return myTrain;
     }
