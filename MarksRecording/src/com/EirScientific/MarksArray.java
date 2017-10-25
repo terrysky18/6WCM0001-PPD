@@ -49,10 +49,71 @@ public class MarksArray {
 
     public void listMarks()
     {
+        System.out.print("marks=[");
+        for (int i=0; i<array_length; i++)
+        {
+            System.out.print(Integer.toString(marks[i]));
+            if (i < array_length-1)
+            {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+
+    public String assessMark(int mark)
+    {
+        String score = "";
+        if (mark >= 75) { score = "DISTINCTION"; }
+        else if (mark < 75 && mark >=45) { score = "PASS"; }
+        else { score = "FAIL"; }
+        return score;
+    }
+
+    public void assessMarks()
+    {
+        System.out.print("assessment=[");
+        for (int i=0; i<array_length; i++)
+        {
+            System.out.print(assessMark(marks[i]));
+            if (i < array_length-1)
+            {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+
+    public int meanMark()
+    {
+        int average = 0;
         for (int mark : marks)
         {
-            System.out.println(Integer.toString(mark));
+            average += mark;
         }
+        average = average / array_length;
+        return average;
+    }
+
+    public int[] aboveAverage()
+    {
+        int my_average = meanMark();
+        int totalAbove = 0;
+        for (int mark : marks)
+        {
+            if (mark > my_average) { totalAbove++; }
+        }
+        int[] allAbove = new int[totalAbove];
+        int index = 0;
+        for (int mark : marks)
+        {
+            if (mark > my_average)
+            {
+                allAbove[index] = mark;
+                index++;
+            }
+        }
+        return allAbove;
     }
 
     @Override
