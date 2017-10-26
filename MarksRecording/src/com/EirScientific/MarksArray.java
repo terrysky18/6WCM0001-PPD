@@ -116,6 +116,32 @@ public class MarksArray {
         return allAbove;
     }
 
+    public void printAboveAverage()
+    {
+        int[] aboveAverageList = aboveAverage();
+        int list_length = aboveAverageList.length;
+        System.out.print("Above average=[");
+        for (int i=0; i<list_length; i++)
+        {
+            System.out.print(Integer.toString(aboveAverageList[i]));
+            if (i < list_length-1)
+            {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+
+    public int numberOfPasses(int threshold)
+    {
+        int total_passes = 0;
+        for (int mark : marks)
+        {
+            if (mark >= threshold) { total_passes++; }
+        }
+        return total_passes;
+    }
+
     @Override
     public String toString() {
         return "MarksArray{" +

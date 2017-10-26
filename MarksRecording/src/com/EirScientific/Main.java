@@ -9,9 +9,9 @@ public class Main {
         System.out.println(csm1.sizeof());
         csm1.listMarks();
         csm1.assessMarks();
+        System.out.println("Mean mark = " + Integer.toString(csm1.meanMark()));
         int[] temp1 = csm1.aboveAverage();
-        MarksArray temp_array1 = new MarksArray(temp1);
-        temp_array1.listMarks();
+        csm1.printAboveAverage();
 
         System.out.println(csm1.get(0));
         System.out.println(csm1.get(4));
@@ -21,19 +21,29 @@ public class Main {
         csm1.listMarks();
         csm1.assessMarks();
 
+        System.out.println("Mean mark = " + Integer.toString(csm1.meanMark()));
+        csm1.printAboveAverage();
+
         csm1.append(75);
         csm1.listMarks();
         csm1.assessMarks();
+
+        System.out.println("Mean mark = " + Integer.toString(csm1.meanMark()));
+        csm1.printAboveAverage();
 
         csm1.put(3, 101);
         csm1.put(5, 13);
         csm1.listMarks();
         csm1.assessMarks();
 
-        System.out.println(Integer.toString(csm1.meanMark()));
+        System.out.println("Mean mark = " + Integer.toString(csm1.meanMark()));
 
         int[] my_marks2 = {31, 32, 33, 34, 35, 36};
         MarksArray csm2 = new MarksArray(my_marks2);
-        System.out.println(Integer.toString(csm2.meanMark()));
+        System.out.println("Mean mark = " + Integer.toString(csm2.meanMark()));
+        csm2.printAboveAverage();
+
+        System.out.println("Total passes = " + Integer.toString(csm1.numberOfPasses(100)));
+        System.out.println("Total passes = " + Integer.toString(csm2.numberOfPasses(35)));
     }
 }
