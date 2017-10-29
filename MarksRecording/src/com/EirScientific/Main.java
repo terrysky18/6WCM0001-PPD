@@ -43,7 +43,14 @@ public class Main {
         System.out.println("Mean mark = " + Integer.toString(csm2.meanMark()));
         csm2.printAboveAverage();
 
+        System.out.println("All above 45:  " + Integer.toString(csm1.numberOfPasses()));
         System.out.println("Total passes = " + Integer.toString(csm1.numberOfPasses(100)));
         System.out.println("Total passes = " + Integer.toString(csm2.numberOfPasses(35)));
+
+        System.out.println("Highest mark = " + Integer.toString(csm1.highestMark()));
+        System.out.println("Lowest mark = " + Integer.toString(csm1.lowestMark()));
+
+        System.out.println(Integer.toString(csm1.getRange()));
+        System.out.println(Integer.toString(csm1.bestStudent()));
     }
 }

@@ -132,6 +132,17 @@ public class MarksArray {
         System.out.println("]");
     }
 
+    public int numberOfPasses()
+    {
+        /* default passing mark is 45, no parameter is used */
+        int total_passes = 0;
+        for (int mark : marks)
+        {
+            if (mark >= 45) { total_passes++; }
+        }
+        return total_passes;
+    }
+
     public int numberOfPasses(int threshold)
     {
         int total_passes = 0;
@@ -140,6 +151,42 @@ public class MarksArray {
             if (mark >= threshold) { total_passes++; }
         }
         return total_passes;
+    }
+
+    public int highestMark()
+    {
+        int highestSoFar = -1;
+        for (int mark : marks)
+        {
+            if (highestSoFar < mark) { highestSoFar = mark; }
+        }
+        return highestSoFar;
+    }
+
+    public int lowestMark()
+    {
+        int lowestSoFar = 1000;
+        for (int mark : marks)
+        {
+            if (lowestSoFar > mark) { lowestSoFar = mark; }
+        }
+        return lowestSoFar;
+    }
+
+    public int getRange()
+    {
+        return highestMark() - lowestMark();
+    }
+
+    public int bestStudent()
+    {
+        int best_index;
+        int best_mark = highestMark();
+        for (best_index=0; best_index<array_length; best_index++)
+        {
+            if (marks[best_index] == best_mark) { break; }
+        }
+        return best_index;
     }
 
     @Override
